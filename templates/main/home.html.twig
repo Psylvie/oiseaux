@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+    <div >
+
+        <h1>Bienvenue chez <br> Pépé JO </h1>
+    </div>
+    <div>
+        <img src="{{ asset('img/pepeJo.png') }}" alt="Pépé JO">
+    </div>
+{% endblock %}
+
+{% block title %}{{ parent()}} | Home{% endblock %}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>{% block title %}Pépé Jo!{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="icon" href="{{ asset('img/rond.png') }}">
+
+</head>
+<body>
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="flash flash-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+<div class="container">
+    <div class="bird-container bird-container--one">
+        <div class="bird bird--one"></div>
+    </div>
+
+    <div class="bird-container bird-container--two">
+        <div class="bird bird--two"></div>
+    </div>
+
+    <div class="bird-container bird-container--three">
+        <div class="bird bird--three"></div>
+    </div>
+
+    <div class="bird-container bird-container--four">
+        <div class="bird bird--four"></div>
+
+
+    </div>
+
+
+    <header>
+        <section>
+            <h1 ><a href="{{ path('main_home') }}"><img src="{{ asset('img/logoPepeJo.png') }}" alt="LES OISEAUX DE PEPE JO "></a> </h1>
+
+        </section>
+        {% include("inc/nav.html.twig") %}
+
+
+
+    </header>
+
+
+
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+    <footer>
+
+
+        <div>&copy; {{ "now" | date("Y") }} PépéJo création: Sylvie Peuzin</div>
+    </footer>
+</div>
+
+</body>
+</html>
