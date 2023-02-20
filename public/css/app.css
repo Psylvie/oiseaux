@@ -1,0 +1,318 @@
+/*---------------------------------------------mise en page arriere plan--------------------------------------------*/
+body{
+    background-image: url("../img/verdure.jpg");
+}
+body > .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.container {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /*min-height: 0.5rem;*/
+    background-image: linear-gradient(to bottom, rgb(238, 227, 32) 0%, rgb(21, 58, 23) 100%),
+    url('../img/robin.jpg');
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+
+}
+.bird {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+    background-size: auto 100%;
+    width: 88px;
+    height: 125px;
+    will-change: background-position;
+    animation-name: fly-cycle;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+}
+.bird--one {
+    animation-duration: 3s;
+    animation-delay: -0.5s;
+}
+.bird--two {
+    animation-duration: 0.9s;
+    animation-delay: -0.75s;
+}
+.bird--three {
+    animation-duration: 1.25s;
+    animation-delay: -0.25s;
+}
+.bird--four {
+    animation-duration: 1.1s;
+    animation-delay: -0.5s;
+}
+
+
+.bird-container {
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    transform: scale(0) translateX(-10vw);
+    will-change: transform;
+    animation-name: fly-right-one;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.bird-container--one {
+    animation-duration: 15s;
+    animation-delay: 1ms;
+}
+.bird-container--two {
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+.bird-container--three {
+    animation-duration: 14.6s;
+    animation-delay: 9.5s;
+}
+.bird-container--four {
+    animation-duration: 12s;
+    animation-delay: 10.25s;
+}
+
+@keyframes fly-cycle {
+    100% {
+        background-position: -900px 0;
+    }
+}
+@keyframes fly-right-one {
+    0% {
+        transform: scale(0.3) translateX(-10vw);
+    }
+    10% {
+        transform: translateY(2vh) translateX(10vw) scale(0.4);
+    }
+    20% {
+        transform: translateY(0vh) translateX(30vw) scale(0.5);
+    }
+    30% {
+        transform: translateY(4vh) translateX(50vw) scale(0.6);
+    }
+    40% {
+        transform: translateY(2vh) translateX(70vw) scale(0.6);
+    }
+    50% {
+        transform: translateY(0vh) translateX(90vw) scale(0.6);
+    }
+    60% {
+        transform: translateY(0vh) translateX(110vw) scale(0.6);
+    }
+    100% {
+        transform: translateY(0vh) translateX(110vw) scale(0.6);
+    }
+}
+@keyframes fly-right-two {
+    0% {
+        transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+    }
+    10% {
+        transform: translateY(0vh) translateX(10vw) scale(0.4);
+    }
+    20% {
+        transform: translateY(-4vh) translateX(30vw) scale(0.6);
+    }
+    30% {
+        transform: translateY(1vh) translateX(50vw) scale(0.45);
+    }
+    40% {
+        transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+    }
+    50% {
+        transform: translateY(0vh) translateX(90vw) scale(0.45);
+    }
+    51% {
+        transform: translateY(0vh) translateX(110vw) scale(0.45);
+    }
+    100% {
+        transform: translateY(0vh) translateX(110vw) scale(0.45);
+    }
+}
+/*---------------------------------------------En tete et nav ---------------------------------------------------------------*/
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: row;
+    margin-right: auto;
+
+}
+header img{
+    height: 400px;
+    width: 400px;
+}
+nav{
+
+
+    background-color: rgba(8, 9, 8, 0.54);
+    color: white;
+    padding: 0.5em 0;
+    position: fixed; /* Le menu a une position fixe lors de la descente dans la page */
+    text-align: center; /* alignement du texte centré */
+    width: 100%; /* largeur 100% de la fenêtre */
+    top: 0; /* aligné à 0px du haut */
+    left:30px /* aligné à 0px de la gauche */
+}
+
+nav li{
+    float: left ;
+    list-style-type: none;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration:none;
+    text-align: center;
+}
+
+nav > ul > li > a {
+    padding: 10px 20px;
+
+
+}
+a {
+    color: inherit;
+    font-weight: bold;
+
+}
+section{
+    padding-top: 65px;
+}
+
+a:hover {
+    color: #ffffff;
+    size: letter;
+    font-size: 30px;
+}
+main{
+    flex: 1;
+}
+
+h1{
+    margin-top: -65px;
+    font-family: Dialog, serif;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: bold;
+    font-style: italic;
+    padding-bottom: 80px;
+
+
+}
+h2{
+    text-align: center;
+    font-family: "Book Antiqua", serif;
+
+}
+h4{
+    font-style: italic;
+}
+
+/*---------------------------------------accueil-------------------------------------------------------*/
+img{
+  float: left;
+   margin: 20px;
+    width: 300px;
+    height: 300px;
+    /*border-radius: 20px;*/
+}
+p{
+
+    /*margin-left: 1px;*/
+    background-color: rgba(38, 61, 38, 0.8);
+    color: #DDDDDD;
+    font-style: italic;
+    padding: 10px;
+    text-align: justify;
+
+
+}
+/*---------------------------------liste oiseaux-------------------------------------------------*/
+.list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.photoOiseau {
+
+    padding: 5px;
+    font-size: x-large;
+}
+.photoOiseau p{
+    text-align: center;
+}
+.mereOisillon{
+
+    font-size: x-large;
+}
+.mereOisillon img {
+    width: 700px;
+    height: 400px;
+    padding-left: 0;
+}
+
+.oisillon p{
+    padding-top: 300px;
+    text-align: center;
+    font-style: normal;
+    font-size: x-large;
+
+}
+
+
+/*-------------------------------boutons--------------------------------------------*/
+.btn-primary {
+    color: white;
+    background-color: rgba(8, 9, 8, 0.54);
+    border-color: #DDDDDD;
+}
+.btn-primary:hover{
+    background-color: black;
+}
+.offcanvas{
+    background-image: url("../img/verdure.jpg");
+    color: white;
+    text-align: center;
+    margin: 190px;
+
+}
+.btn
+{
+    color: white;
+    background-color: rgba(8, 9, 8, 0.54);
+    border-color: #DDDDDD;
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+.container1
+{
+    background-color: rgb(38, 61, 38);
+    color: white;
+}
+.messageAlire {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.list-group-item{
+    background-color: rgb(38, 61, 38);
+    color: white;
+}
+.list-group-item.active{
+    background-color: white;
+    color: black;
+    border-color: black;
+}

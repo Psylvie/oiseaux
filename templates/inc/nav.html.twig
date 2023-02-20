@@ -1,11 +1,12 @@
 <nav>
     <ul>
         <li><a href="{{ path('main_home') }}" title="Home">Accueil</a> </li>
-{#        <li><a href="{{ path('main_profil') }}" title="Profil">Profil</a> </li>#}
         <li><a href="{{ path('oiseau_list') }}" title="Les oiseaux ">Les oiseaux</a> </li>
         {% if app.user %}
             <li><a href="{{ path('oiseau_create') }}" title="créer une nouvelle fiche">Créer une fiche</a> </li>
             <li><a href="{{ path('app_logout') }}" title="logout">Deconnexion {{ app.user.pseudo}}</a> </li>
+           <li><a href="{{ path('user_profil') }}" title="Profil">Mon profil {{ app.user.prenom}}</a> </li>
+            <li><a href="{{ path('app_messages') }}" title="Messagerie">Messagerie </a> </li>
             {% if is_granted("ROLE_ADMIN") %}
                 <li><a href="{{ path("admin_dashboard") }}" title="Admin dashboard">Administrateur</a></li>
             {% endif %}

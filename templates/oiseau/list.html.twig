@@ -1,9 +1,29 @@
 {% extends 'base.html.twig' %}
+
+
 {% block body %}
-    <section>
-        todo : afficher les oiseaux
+
+    <div>
+        <h1>Les oiseaux </h1>
+    </div>
+
+    <section class="list">
+       {% for oiseau in oiseaux %}
+           <div class="lesOiseaux">
+
+
+           </div>
+        <div class="photoOiseau">
+
+            <a href="{{ path('oiseau_details',{'id':oiseau.id}) }}" title="voir details oiseau">
+                <img src="{{ asset('images/oiseaux/'~ oiseau.imageName) }}" alt="{{ oiseau.imageFile }}">
+                <p>  {{ oiseau.name | upper }}<br>{{ oiseau.prix }} € <br> Proprietaire : {{ oiseau.user.pseudo }}
+                </p>
+            </a>
+        </div>
+        {% endfor %}
     </section>
 {% endblock %}
 {% block title %}
-    The best series | {{ parent() }}
+
 {% endblock %}

@@ -5,8 +5,33 @@
 {% endblock %}
 
 {% block body %}
-<h2> titre oiseau </h2>
+    <h1> {{ oiseau.name | upper}}</h1>
+<div class="mereOisillon">
+<a href="{{ path('oiseau_details', {'id':oiseau.id}) }}" title="voir details oiseau | {{oiseau.name}} ">
+    <img src="{{ asset('images/oiseaux/'~oiseau.imageName ) }}" alt="{{ oiseau.imageFile }}">
+</a>
 
-affichage toutes infos sur l'oiseau
+    <div class="oisillon">
+    <p> FICHE OISEAU : <br>
+
+
+        COULEUR: {{ oiseau.couleur }} <br>
+        PRIX: {{ oiseau.prix}} € <br>
+        SEXE: {{ oiseau.sexe}} <br>
+        HABITAT: {{ oiseau.habitat}} <br>
+        ALIMENTATION: {{ oiseau.alimentation}} <br>
+        RESIDE: {{ oiseau.lieux }} <br>
+        TAILLE: {{ oiseau.taille }}cm <br>
+        LONGEVITE: {{ oiseau.longevite }} ans <br>
+        REPRODUCTION: {{ oiseau.reproduction }} f/an <br>
+        INFOS COMPLEMENTAIRE: {{ oiseau.description }} <br>
+        Proprietaire : {{ oiseau.user.pseudo }} <a href="{{ path('send') }}" class="btn btn-primary"> Envoyer un message</a>
+    </p>
+
+    </div>
+</div>
+
+
+
 
 {% endblock %}

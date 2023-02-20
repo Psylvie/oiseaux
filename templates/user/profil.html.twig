@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+
+
+    <h1>Profil de {{ app.user.prenom }}</h1>
+    <h4> Voulez vous apporter une modification ?</h4>
+    <div>
+<br>
+        {{ form_start(RegistrationFormType) }}
+       {{ form_widget(RegistrationFormType) }}
+        {{ form_end(RegistrationFormType) }}
+
+         <button  class="btn btn-lg btn-primary" type="submit">Enregistrer</button>
+        <button  class="btn btn-lg btn-primary" type="submit">Annuler</button>
+
+        {{ form_end(RegistrationFormType) }}
+
+
+
+    </div>
+    <section class="oiseaux">
+        <h1> Mes oiseaux </h1>
+        {% for oiseau in app.user.oiseaus%}
+            <img src="{{ asset('images/oiseaux/'~ oiseau.imageName) }}"
+{#                 alt="{{ app.user.prenom }}"#}
+
+            >
+            <div> {{ oiseau.name }}</div>
+            <div> {{ oiseau.prix }} €</div>
+
+
+        {% endfor %}
+    </section>
+{% endblock %}

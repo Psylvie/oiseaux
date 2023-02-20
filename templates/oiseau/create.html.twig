@@ -1,7 +1,24 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <div>
-        {# todo: afficher le formulaire #}
+
+        {{ form_start(oiseauForm) }}
+        {{ form_row(oiseauForm.name) }}
+        {{ form_row(oiseauForm.prix) }}
+        {{ form_row(oiseauForm.sexe) }}
+        {{ form_row(oiseauForm.habitat) }}
+        {{ form_row(oiseauForm.alimentation) }}
+        {{ form_row(oiseauForm.lieux) }}
+        {{ form_row(oiseauForm.taille) }}
+        {{ form_row(oiseauForm.longevite) }}
+        {{ form_row(oiseauForm.reproduction) }}
+        {{ form_row(oiseauForm.couleur) }}
+        {{ form_row(oiseauForm.description) }}
+        {{ form_row(oiseauForm.imageFile) }}
+
+ <button> ENREGISTRER ! </button>
+        {{ form_end(oiseauForm) }}
+
     </div>
 {% endblock %}
 {% block title %}
